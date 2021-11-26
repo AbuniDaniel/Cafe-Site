@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head") %>
+    <meta name="keywords" content="Cafea, Coffee, Oferte, cappuccino">
+    <meta name="description" content="La Coffee4You se serveste cafea pe gustul tuturor, ieftina si buna. Este locul perfect unde se poate incepe o noua zi.">
+    <title>Coffee4You | Acasa</title>
+    <script>
+        window.onload=function(){
+            console.log("hatz")
+        }
+    </script>
+</head>
+
+<body>
+
+<%- include("../fragmente/header") %>
+
+<main>
+    <label> Pret maxim: <input type="number" id="inp-calorii" value="10000"></label> <br>
+    <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="70"></label> <br>
+    <label>Select simplu (tipul laptelui):
+        <select id="inp-categorie">
+            <option value="toate">toate</option>
+            <% for( let prod of locals.produse) { %>
+                <option value="<%- prod.tip_lapte %>"><%- prod.tip_lapte %></option>
+            <% } %>
+        </select>
+    </label>
+    <br>
+    <input type="text" >
+    <br>
+    <label> Selecteaza la reducere:
+    <input type="radio" id="da">
+    <label for="da">DA</label>
+    <input type="radio" id="nu">
+    <label for="nu">NU</label>
+    </label>
+    <br>
+    <label for="ingrediente">Alege ingredientele: </label>
+    <select name="ingrediente" id="ingrediente" multiple>
+        <option value="faina">faina</option>
+        <option value="zahar">zahar</option>
+        <option value="unt">unt</option>
+        <option value="cofeina">cofeina</option>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit">
+
+    <section id="produse">
+        <h2>Produse</h2>
+        <div class="grid-produse">
+        <% for(let prod of locals.produse) { %>
+            <article class="coloana1">
+                <img src="/resurse/imagini/produse/<%- prod.imagine%>" alt="iamagine produs" />
+                <p class="nume"><b>Nume:</b> <a href="/produs/<%-prod.id %>"><span><%- prod.nume%></span></a></p>
+                <p class="pret"><b>Pret:</b> <span><%- prod.pret%></span> lei</p>
+                <p class="tip_lapte"><b>Tip lapte:</b> <span><%- prod.tip_lapte%></span></p>
+                <p class="ingrediente"><b>Ingrediente:</b> <span><%- prod.ingrediente%></span></p>
+                <%var luna=["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"]%>
+                <%var zi=["Luni","Marti","Miercuri","Joi","Vineri","Sambata","Duminica"]%>
+                <p class="data_adaugare"><time datetime="prod.data_adaugare"><b>Data adaugare produs:</b> <span><%- (prod.data_adaugare).getDate();  %> <%- luna[(prod.data_adaugare).getMonth()];  %> <%- (prod.data_adaugare).getFullYear();%> [<%- zi[(prod.data_adaugare).getDate()%7];%>]</span></time></p>
+                <p class="reducere">
+                    <b>Produsul este la reducere:</b>
+                    <% if(prod.reducere) {%>
+                        Da
+                    <%} else {%>
+                        Nu
+                    <% }%>
+                </p>
+            </article>
+            <article class="coloana2">
+                <p class="categorie">Categorie: <span><%- prod.tip_produs%></span></p>
+                <p class="descriere">Descriere: <span><%- prod.descriere%></span></p>
+            </article>
+        <% }%>
+        </div>
+    </section>
+</main>
+
+<%- include("../fragmente/footer") %>
+
+<div id="banner"><p>DISCLAIMER: Acesta este un proiect skolar</p></div>
+</body>
+</html>

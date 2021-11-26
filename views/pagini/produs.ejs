@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include("../fragmente/head") %>
+    <meta name="keywords" content="Cafea, Coffee, Oferte, cappuccino">
+    <meta name="description" content="La Coffee4You se serveste cafea pe gustul tuturor, ieftina si buna. Este locul perfect unde se poate incepe o noua zi.">
+    <title>Coffee4You | Acasa</title>
+</head>
+
+<body>
+
+<%- include("../fragmente/header") %>
+
+<main>
+    <section>
+        <h2><span><%- locals.prod.nume%></span></h2>
+            <article class="produs">
+                <p class="descriere"><b>Descriere:</b> <span><%- locals.prod.descriere%></span></p>
+                <p class="pret"><b>Pret:</b> <span><%- locals.prod.pret%></span> lei</p>
+                <p class="tip_lapte"><b>Tip lapte:</b> <span><%- locals.prod.tip_lapte%></span></p>
+                <p class="tip_produs"><b>Tip produs:</b> <span><%- locals.prod.tip_produs%></span></p>
+                <p class="calorii"><b>Calorii:</b> <span><%- locals.prod.calorii%></span></p>
+                <p class="ingrediente"><b>Ingrediente:</b> <span><%- locals.prod.ingrediente%></span></p>
+                <%var luna=["Ianuarie","Februarie","Martie","Aprilie","Mai","Iunie","Iulie","August","Septembrie","Octombrie","Noiembrie","Decembrie"]%>
+                <%var zi=["Luni","Marti","Miercuri","Joi","Vineri","Sambata","Duminica"]%>
+                <p class="data_adaugare"><time datetime="prod.data_adaugare"><b>Data adaugare produs:</b> <span><%- (prod.data_adaugare).getDate();  %> <%- luna[(prod.data_adaugare).getMonth()];  %> <%- (prod.data_adaugare).getYear()+1900;%> [<%- zi[(prod.data_adaugare).getDate()%7];%>]</span></time></p>
+                <p class="reducere">
+                    <b>Produsul este la reducere:</b>
+                    <% if(prod.reducere) {%>
+                        Da
+                    <%} else {%>
+                        Nu
+                    <% }%>
+                </p>
+                <img src="/resurse/imagini/produse/<%- locals.prod.imagine%>" alt="iamagine produs" />
+            </article>
+    </section>
+</main>
+
+<%- include("../fragmente/footer") %>
+
+<div id="banner"><p>DISCLAIMER: Acesta este un proiect skolar</p></div>
+</body>
+</html>
