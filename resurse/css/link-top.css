@@ -1,0 +1,22 @@
+#link-top{
+    position: fixed;
+    display:block;
+    opacity:0.5;
+    bottom:5px;
+    left:5px;
+    width:40px;
+    height:40px;
+    background-color: var(--culoare1);
+    border-radius: 50%;
+    border:2px solid var(--culoare2);
+    box-shadow:0px 0px 10px 2px var(--culoare5);
+    text-decoration: none;
+    overflow: visible;
+    transition: 0.3s;
+}
+#link-top:hover{
+    opacity: 1;
+}
+#triunghi{
+    margin: 6px 0 0 15px;
+}

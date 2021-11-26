@@ -1,0 +1,72 @@
+#watermark{
+    display: none;
+}
+
+@media print{
+    iframe, figure, img, #galerie-statica, .taburi-iframe{
+        display: none;
+    }
+
+    a{
+        text-decoration: none;
+    }
+
+    #link-top{
+        display: none;
+    }
+
+    #meniu{
+        display: block;
+        page-break-after: always;
+    }
+
+    #meniu>li{
+        display: block;
+    }
+
+    h1{
+        text-align: center;
+    }
+
+    #banner{
+        width: 70%;
+        position: absolute;
+        left: 17%;
+        bottom: 50%;
+        border: 4px inset black;
+    }
+
+    #watermark
+    {
+        display: block;
+        position: fixed;
+        bottom:0;
+        right:0;
+        text-align: center;
+        font-weight: bold;
+    }
+
+    #watermark::after{
+
+        opacity: 0.4;
+        display: block;
+        background: white;
+        border: 3px solid black;
+        border-radius: 10px;
+        content:"Abuni Daniel";
+        height: 1cm;
+        width: 4cm;
+    }
+
+    footer{
+        page-break-before: always;
+    }
+    @page:left{
+        margin-left: 3cm;
+        margin-right: 1cm;
+    }
+    @page:right{
+        margin-left: 1cm;
+        margin-right: 3cm;
+    }
+}

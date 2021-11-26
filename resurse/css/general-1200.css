@@ -1,0 +1,27 @@
+html{
+    font-size: 14px;
+}
+
+#grid-pagina{
+    display:grid;
+
+    grid-template-areas: "z1 z1"
+                         "z2 z2"
+                         "z2 z2"
+                         "z3 z3"
+                         "z4 z4"
+                         "z5 z6"
+                         "z7 z7"
+                         "z8 z8";
+    grid-gap: 10px;
+    padding: 10px;
+}
+
+#banner{
+    display: none;
+}
+
+iframe{
+    max-width:400px;
+    width:100%;
+}

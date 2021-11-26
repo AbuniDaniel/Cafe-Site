@@ -1,0 +1,22 @@
+html{
+    font-size: 11px;
+}
+
+#grid-pagina{
+    display:block;
+}
+
+#banner{
+    display: none;
+}
+
+iframe{
+    max-width:300px;
+    width:100%;
+}
+
+#tabel{
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}

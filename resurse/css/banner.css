@@ -1,0 +1,40 @@
+#banner {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    width: 100%;
+    left: -100%;
+    background-color: transparent;
+    height: 30px;
+    animation-name: banner;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+#banner p{
+    position: relative;
+    text-align: center;
+    bottom: 17px;
+    font-size: 20px;
+}
+
+@keyframes banner{
+    0%{
+        background: var(--culoare1);
+        border: 4px solid var(--culoare2);
+}
+    25%{
+        background: var(--culoare2);
+        border: 4px solid var(--culoare3);
+}
+    50%{
+        left: 0;
+        background: var(--culoare3);
+        border: 4px solid var(--culoare2);
+}
+    100%{
+        left: 0;
+        background: var(--culoare2);
+        border: 4px solid var(--culoare3);
+}
+}

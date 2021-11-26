@@ -1,0 +1,50 @@
+#hamburger{
+    display: block;
+}
+
+#meniu{
+    display:none;
+    position:absolute;
+    width:100%;
+}
+
+#ch-menu:checked+#meniu{
+    display: block;
+}
+
+#meniu li{
+    width:100%;
+}
+
+#meniu>li ul{
+    position:absolute;
+    width:100%;
+    z-index:20;
+}
+
+#meniu>li div{
+    animation-name: aparitie_meniu_mic;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    animation-timing-function:linear;
+    transform-origin: top center;
+}
+
+#meniu ul a:hover{
+    text-decoration: none;
+}
+
+#meniu div.shadow{
+    text-shadow: none;
+}
+
+@keyframes aparitie_meniu_mic {
+    0% {
+        transform: scaleX(0)
+
+    }
+    100% {
+        transform: scaleX(1)
+    }
+}
+

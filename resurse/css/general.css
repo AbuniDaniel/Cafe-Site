@@ -1,0 +1,91 @@
+html{
+    --culoare1:#efc3a4;
+    --culoare2: #4b1f0e;
+    --culoare3:#be7656;
+    --culoare4:#794028;
+    --culoare5:#0e0504;
+    --culoare-meniu: rgba(239, 191, 155, 0.6);
+    font-size:16px;
+    background-color: var(--culoare-meniu);
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+
+#grid-pagina{
+    display:grid;
+
+    grid-template-areas: "z1 z1 z1 z1"
+                         "z2 z2 z3 z3"
+                         "z2 z2 z4 z4"
+                         "z5 z6 z6 z7"
+                         "z8 z8 z8 z8";
+    grid-gap: 10px;
+    padding: 10px;
+
+}
+
+#grid-pagina section{
+    outline:3px solid var(--culoare1);
+    padding:1rem;
+}
+
+#z1{
+    grid-area: z1;
+}
+
+#z2{
+    grid-area: z2;
+}
+
+#z2 h2{
+    text-align: center;
+}
+
+#z3{
+    grid-area: z3;
+}
+
+#z4{
+    grid-area: z4;
+}
+
+#z5{
+    grid-area: z5;
+}
+
+#z6{
+    grid-area: z6;
+}
+
+#z7{
+    grid-area: z7;
+}
+
+#z8{
+    grid-area: z8;
+}
+
+#buaba{
+    position: relative;
+    top: 2px;
+    width: 20px;
+    height: 25px;
+}
+
+#cana{
+    position: relative;
+    left: 5px;
+    top: 7px;
+    width: 25px;
+    height: 35px;
+}
+
+#cafea-404{
+    width: 25%;
+    height: 25%;
+}
+
+#eroare-404{
+    text-align: center;
+}

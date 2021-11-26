@@ -1,0 +1,16 @@
+hr{
+    overflow: visible;
+    text-align: center;
+    border: 2px solid var(--culoare3);
+    border-radius: 25px;
+    height: 0;
+    width: 50%;
+}
+
+hr:after{
+    position: relative;
+    background: white;
+    content: "✽";
+    top: -12px;
+    padding: 0 15px;
+}
